@@ -156,7 +156,7 @@ class _OnGoingPcDatailsState extends State<OnGoingPcDatails> {
                                           docTodayData["Name"],
                                           style: GoogleFonts.poppins(
                                               fontSize: 18,
-                                              fontWeight: FontWeight.w600,
+                                              // fontWeight: FontWeight.w600,
                                               color: Colors.grey),
                                         ),
                                       ),
