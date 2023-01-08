@@ -53,7 +53,7 @@ class _OnGoingPcDatailsState extends State<OnGoingPcDatails> {
                           );
                         },
                         child: Container(
-                          width: MediaQuery.of(context).size.width,
+                            width: MediaQuery.of(context).size.width,
                             decoration: BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(15)),
@@ -136,11 +136,38 @@ class _OnGoingPcDatailsState extends State<OnGoingPcDatails> {
                                     ),
                                   ),
                                 ),
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 10),
+                                  child: Row(
+                                    children: [
+                                      Text(
+                                        "Name: ",
+                                        style: GoogleFonts.poppins(
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.w600,
+                                            color: Colors.black),
+                                      ),
+                                      Container(
+                                        width:
+                                            MediaQuery.of(context).size.width /
+                                                1.5,
+                                        child: Text(
+                                          docTodayData["Name"],
+                                          style: GoogleFonts.poppins(
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.w600,
+                                              color: Colors.grey),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
                                 Row(
                                   children: [
                                     Padding(
                                       padding: const EdgeInsets.symmetric(
-                                          horizontal: 15, vertical: 10),
+                                          horizontal: 15, vertical: 5),
                                       child: Text(
                                         docTodayData["Item"],
                                         style: GoogleFonts.poppins(
@@ -151,7 +178,7 @@ class _OnGoingPcDatailsState extends State<OnGoingPcDatails> {
                                     ),
                                     const Spacer(),
                                     Padding(
-                                      padding: const EdgeInsets.only(right: 15),
+                                      padding: const EdgeInsets.only(right: 5),
                                       child: Text(
                                         docTodayData["Cost"],
                                         style: GoogleFonts.poppins(

@@ -106,6 +106,31 @@ class _ItemDataPageState extends State<ItemDataPage> {
                           Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 10),
                             child: Row(
+                              children: [
+                                Text(
+                                  "Name: ",
+                                  style: GoogleFonts.poppins(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w600,
+                                      color: Colors.black),
+                                ),
+                                Container(
+                                  width:
+                                      MediaQuery.of(context).size.width / 1.5,
+                                  child: Text(
+                                    docItemData["Name"],
+                                    style: GoogleFonts.poppins(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w600,
+                                        color: Colors.grey),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 10),
+                            child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
