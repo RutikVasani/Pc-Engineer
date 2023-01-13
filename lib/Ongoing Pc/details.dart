@@ -148,15 +148,42 @@ class _OnGoingPcDatailsState extends State<OnGoingPcDatails> {
                                             fontWeight: FontWeight.w600,
                                             color: Colors.black),
                                       ),
-                                      Container(
+                                      SizedBox(
                                         width:
                                             MediaQuery.of(context).size.width /
-                                                1.5,
+                                                1.7,
                                         child: Text(
                                           docTodayData["Name"],
                                           style: GoogleFonts.poppins(
                                               fontSize: 18,
-                                              // fontWeight: FontWeight.w600,
+                                              fontWeight: FontWeight.w600,
+                                              color: Colors.grey),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 10),
+                                  child: Row(
+                                    children: [
+                                      Text(
+                                        "Mobile No: ",
+                                        style: GoogleFonts.poppins(
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.w600,
+                                            color: Colors.black),
+                                      ),
+                                      Container(
+                                        width:
+                                            MediaQuery.of(context).size.width /
+                                                2,
+                                        child: Text(
+                                          docTodayData["Mobile No"],
+                                          style: GoogleFonts.poppins(
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.w600,
                                               color: Colors.grey),
                                         ),
                                       ),
@@ -167,12 +194,12 @@ class _OnGoingPcDatailsState extends State<OnGoingPcDatails> {
                                   children: [
                                     Padding(
                                       padding: const EdgeInsets.symmetric(
-                                          horizontal: 15, vertical: 5),
+                                          horizontal: 10),
                                       child: Text(
                                         docTodayData["Item"],
                                         style: GoogleFonts.poppins(
                                             fontSize: 20,
-                                            fontWeight: FontWeight.w600,
+                                            fontWeight: FontWeight.w500,
                                             color: Colors.black),
                                       ),
                                     ),
@@ -183,7 +210,7 @@ class _OnGoingPcDatailsState extends State<OnGoingPcDatails> {
                                         docTodayData["Cost"],
                                         style: GoogleFonts.poppins(
                                             fontSize: 20,
-                                            fontWeight: FontWeight.w600,
+                                            fontWeight: FontWeight.w500,
                                             color: Colors.black),
                                       ),
                                     ),
