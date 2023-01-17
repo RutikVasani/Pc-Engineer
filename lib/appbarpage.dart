@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/alertdatapage.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -42,17 +43,55 @@ class _AppBarPageState extends State<AppBarPage> {
         actions: [
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: IconButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => ShowAlertDataPage(),
+            child: Container(
+              decoration: BoxDecoration(
+                  color: Colors.blue.shade200,
+                  borderRadius: BorderRadius.circular(10)),
+              child: Row(
+                children: [
+                  IconButton(
+                    icon: const Icon(Icons.add_alert),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const ShowAlertDataPage(),
+                        ),
+                      );
+                    },
+                  ),
+                  Container(
+                    child: StreamBuilder(
+                      stream: FirebaseFirestore.instance
+                          .collection("Alert")
+                          .snapshots(),
+                      builder: (__,
+                          AsyncSnapshot<QuerySnapshot<Map<String, dynamic>>>
+                              snapshot) {
+                        if (snapshot.hasData && snapshot.data != null) {
+                          if (snapshot.data!.docs.isNotEmpty) {
+                            int _alertItem = snapshot.data!.docs.length;
+                            return Padding(
+                                    padding: const EdgeInsets.only(right: 5),
+                                    child: Text('${_alertItem}',
+                                        style: GoogleFonts.ubuntu(
+                                            fontSize: 25,
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.white)),
+                                  );
+                          }
+                        }
+                        return const SizedBox(
+                          height: 0,
+                          width: 0,
+                        );
+                      },
                     ),
-                  );
-                },
-                icon: Icon(Icons.add_alert, size: 30,)),
-          )
+                  ),
+                ],
+              ),
+            ),
+          ),
         ],
       ),
       body: pages[pageIndex],

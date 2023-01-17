@@ -103,7 +103,7 @@ class _ChangeDataPageState extends State<ChangeDataPage> {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: TextFormField(
-                    initialValue: _pcno,
+                    initialValue: _remarks,
                     decoration: const InputDecoration(
                       prefixIcon: Icon(Icons.design_services),
                       labelText: 'Enter Remark',
